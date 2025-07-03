@@ -2499,31 +2499,31 @@
             ],
             "percentiles": {
                 "base_salary": {
-                    "p10": 142000,
-                    "p25": 152000,
+                    "p10": 146000,
+                    "p25": 182700,
                     "p50": 190000,
-                    "p75": 205000,
+                    "p75": 210000,
                     "p90": 282000
                 },
                 "tc": {
-                    "p10": 177000,
-                    "p25": 193000,
-                    "p50": 337500,
-                    "p75": 368270,
+                    "p10": 186000,
+                    "p25": 292700,
+                    "p50": 350750,
+                    "p75": 380500,
                     "p90": 512000
                 },
                 "bonus": {
                     "p10": 0,
                     "p25": 0,
-                    "p50": 7500,
-                    "p75": 18270,
+                    "p50": 17000,
+                    "p75": 20500,
                     "p90": 56000
                 },
                 "stock_grant": {
-                    "p10": 35000,
-                    "p25": 41000,
-                    "p50": 140000,
-                    "p75": 145000,
+                    "p10": 40000,
+                    "p25": 110000,
+                    "p50": 143750,
+                    "p75": 150000,
                     "p90": 174000
                 },
                 "locationName": "United States"
@@ -2582,7 +2582,7 @@
                 "experienceRequirements": "Minimum of 0 years of experience",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "lastReviewed": "2025-07-02T18:53:40.205Z"
+                    "lastReviewed": "2025-07-03T01:23:48.696Z"
                 },
                 "estimatedSalary": [
                     {
@@ -2592,10 +2592,10 @@
                         "currency": "USD",
                         "unitText": "YEAR",
                         "duration": "P1Y",
-                        "percentile10": "177000",
-                        "percentile25": "193000",
-                        "median": "337500",
-                        "percentile75": "368270",
+                        "percentile10": "186000",
+                        "percentile25": "292700",
+                        "median": "350750",
+                        "percentile75": "380500",
                         "percentile90": "512000"
                     },
                     {
@@ -2605,10 +2605,10 @@
                         "currency": "USD",
                         "unitText": "YEAR",
                         "duration": "P1Y",
-                        "percentile10": "142000",
-                        "percentile25": "152000",
+                        "percentile10": "146000",
+                        "percentile25": "182700",
                         "median": "190000",
-                        "percentile75": "205000",
+                        "percentile75": "210000",
                         "percentile90": "282000"
                     },
                     {
@@ -2618,10 +2618,10 @@
                         "currency": "USD",
                         "unitText": "YEAR",
                         "duration": "P1Y",
-                        "percentile10": "35000",
-                        "percentile25": "41000",
-                        "median": "140000",
-                        "percentile75": "145000",
+                        "percentile10": "40000",
+                        "percentile25": "110000",
+                        "median": "143750",
+                        "percentile75": "150000",
                         "percentile90": "174000"
                     },
                     {
@@ -2633,8 +2633,8 @@
                         "duration": "P1Y",
                         "percentile10": null,
                         "percentile25": null,
-                        "median": "7500",
-                        "percentile75": "18270",
+                        "median": "17000",
+                        "percentile75": "20500",
                         "percentile90": "56000"
                     }
                 ],
@@ -2661,10 +2661,10 @@
                 },
                 {
                     "question": "How much do DocuSign Software Engineer employees get paid in United States?",
-                    "answer": "The median yearly total compensation reported at DocuSign for the Software Engineer role in United States is $337,500."
+                    "answer": "The median yearly total compensation reported at DocuSign for the Software Engineer role in United States is $350,750."
                 }
             ],
-            "companySalariesJobFamilyFAQSchema": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is the highest Software Engineer salary at DocuSign in United States?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The highest paying salary package reported for a Software Engineer at DocuSign in United States sits at a yearly total compensation of $512,000. This includes base salary as well as any potential stock compensation and bonuses.\"}},{\"@type\":\"Question\",\"name\":\"How much do DocuSign Software Engineer employees get paid in United States?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The median yearly total compensation reported at DocuSign for the Software Engineer role in United States is $337,500.\"}}]}",
+            "companySalariesJobFamilyFAQSchema": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is the highest Software Engineer salary at DocuSign in United States?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The highest paying salary package reported for a Software Engineer at DocuSign in United States sits at a yearly total compensation of $512,000. This includes base salary as well as any potential stock compensation and bonuses.\"}},{\"@type\":\"Question\",\"name\":\"How much do DocuSign Software Engineer employees get paid in United States?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The median yearly total compensation reported at DocuSign for the Software Engineer role in United States is $350,750.\"}}]}",
             "locationMeta": null,
             "locationCurrency": "USD",
             "locationExchangeRate": 1,
@@ -2700,8 +2700,8 @@
                 "countryName": "United States",
                 "currency": "USD"
             },
-            "_sentryTraceData": "0ed6dfb3215e4557af1fc06e81965f48-a7e3669e3fbab463-0",
-            "_sentryBaggage": "sentry-environment=production,sentry-release=Gs2AnbiJGv3yY7XPFFKI0,sentry-public_key=c895cb024b0c407c966bffb65e6592b5,sentry-trace_id=0ed6dfb3215e4557af1fc06e81965f48,sentry-transaction=%2Fcompanies%2F%5Bcompany%5D%2Fsalaries%2F%5Bjob-family%5D,sentry-sampled=false"
+            "_sentryTraceData": "6853db2f92384c009cf3ce647ef10bbc-abbc1e6951f2919c-0",
+            "_sentryBaggage": "sentry-environment=production,sentry-release=Gs2AnbiJGv3yY7XPFFKI0,sentry-public_key=c895cb024b0c407c966bffb65e6592b5,sentry-trace_id=6853db2f92384c009cf3ce647ef10bbc,sentry-transaction=%2Fcompanies%2F%5Bcompany%5D%2Fsalaries%2F%5Bjob-family%5D,sentry-sampled=false"
         },
         "__N_SSP": true
     },
