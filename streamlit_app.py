@@ -365,6 +365,7 @@ class StreamlitApp():
             mode='markers',
             marker=dict(size=10)  # Marker size in pixels
         )
+    
     def scatter_plot(
         self,
         df,
@@ -520,7 +521,7 @@ class StreamlitApp():
     
     @functools.cached_property
     def aggregated_by_level_df(self):
-        to_agg = self.df
+        to_agg = self.filtered_df
         to_agg[self.lt_yoe_col] = (to_agg[YOE_COL] <= self.yoe).astype(int)
         grouped_by_level = to_agg.groupby([COMPANY_COL, LEVEL_COL, LEVEL_INDEX_COL])
         level_by_yoe = grouped_by_level.agg({
