@@ -168,14 +168,14 @@ COMPANY_GROUPS["Top Paying 2024 [V - Principal Software Engineer]"] = [
     "Bosch Global",
 ]
 
-COMPANY_GROUPS['FAANG'] = [
+COMPANY_GROUPS["FAANG"] = [
     "Facebook",
     "Apple",
     "Amazon",
     "Netflix",
     "Google",
 ]
-COMPANY_GROUPS['MANGO'] = [
+COMPANY_GROUPS["MANGO"] = [
     "Facebook",
     "Anthropic",
     "Nvidia",
@@ -183,24 +183,21 @@ COMPANY_GROUPS['MANGO'] = [
     "OpenAI",
 ]
 
-COMPANY_GROUPS['Social Media'] = [
+COMPANY_GROUPS["Social Media"] = [
     "Facebook",
     "Twitter",
     "ByteDance",
-
     "Snap",
     "Pinterest",
     "LinkedIn",
     "Reddit",
     "Clubhouse",
-
     "Netflix",
-
     "Roblox",
     "Twitch",
 ]
 
-COMPANY_GROUPS['Gig Economy'] = [
+COMPANY_GROUPS["Gig Economy"] = [
     "Uber",
     "Lyft",
     "Instacart",
@@ -210,7 +207,7 @@ COMPANY_GROUPS['Gig Economy'] = [
     "Coupang",
     "StubHub",
 ]
-COMPANY_GROUPS['Finance [Investment Firms]'] = [
+COMPANY_GROUPS["Finance [Investment Firms]"] = [
     "Vatic Investments",
     "TGS Management",
     "Hudson River Trading",
@@ -230,31 +227,31 @@ COMPANY_GROUPS['Finance [Investment Firms]'] = [
     "insitro",
     # "Cruise Automation",
 ]
-COMPANY_GROUPS['Finance [Crypto]'] = [
+COMPANY_GROUPS["Finance [Crypto]"] = [
     "The Block",
     "Coinbase",
 ]
-COMPANY_GROUPS['Finance [Payments]'] = [
+COMPANY_GROUPS["Finance [Payments]"] = [
     "Stripe",
     "Block",
     "Plaid",
 ]
-COMPANY_GROUPS['Finance [FinTech]'] = [
-    *COMPANY_GROUPS['Finance [Payments]'],
+COMPANY_GROUPS["Finance [FinTech]"] = [
+    *COMPANY_GROUPS["Finance [Payments]"],
     "Rippling",
     "Robinhood",
 ]
-COMPANY_GROUPS['Finance'] = [
-    *COMPANY_GROUPS['Finance [FinTech]'],
-    *COMPANY_GROUPS['Finance [Crypto]'],
-    *COMPANY_GROUPS['Finance [Investment Firms]'],
+COMPANY_GROUPS["Finance"] = [
+    *COMPANY_GROUPS["Finance [FinTech]"],
+    *COMPANY_GROUPS["Finance [Crypto]"],
+    *COMPANY_GROUPS["Finance [Investment Firms]"],
 ]
-COMPANY_GROUPS['Market Control'] = [
-    *COMPANY_GROUPS['Finance'],
-    *COMPANY_GROUPS['Gig Economy'],
+COMPANY_GROUPS["Market Control"] = [
+    *COMPANY_GROUPS["Finance"],
+    *COMPANY_GROUPS["Gig Economy"],
 ]
 
-COMPANY_GROUPS['Hardware'] = [
+COMPANY_GROUPS["Hardware"] = [
     "Pure Storage",
     "Nvidia",
     "AMD",
@@ -264,7 +261,7 @@ COMPANY_GROUPS['Hardware'] = [
     "Broadcom",
     # "Marvell",
 ]
-COMPANY_GROUPS['Enterprise'] = [
+COMPANY_GROUPS["Enterprise"] = [
     "Dropbox",
     "Databricks",
     "Snowflake",
@@ -274,17 +271,17 @@ COMPANY_GROUPS['Enterprise'] = [
     "Amplitude",
 ]
 
-COMPANY_GROUPS['AI [Autonomous Vehicles]'] = [
+COMPANY_GROUPS["AI [Autonomous Vehicles]"] = [
     "Cruise",
     "Waymo",
     "Stack AV",
 ]
-COMPANY_GROUPS['AI [Infrastructure]'] = [
+COMPANY_GROUPS["AI [Infrastructure]"] = [
     "Databricks",
     "Snowflake",
     "Nvidia",
 ]
-COMPANY_GROUPS['AI [Products]'] = [
+COMPANY_GROUPS["AI [Products]"] = [
     "OpenAI",
     "Anthropic",
     "Perplexity AI",
@@ -293,19 +290,19 @@ COMPANY_GROUPS['AI [Products]'] = [
     "Character.ai",
     "Figure AI",
 ]
-COMPANY_GROUPS['AI'] = [
-    *COMPANY_GROUPS['AI [Autonomous Vehicles]'],
-    *COMPANY_GROUPS['AI [Infrastructure]'],
-    *COMPANY_GROUPS['AI [Products]'],
+COMPANY_GROUPS["AI"] = [
+    *COMPANY_GROUPS["AI [Autonomous Vehicles]"],
+    *COMPANY_GROUPS["AI [Infrastructure]"],
+    *COMPANY_GROUPS["AI [Products]"],
 ]
-COMPANY_GROUPS['Market Leaders'] = [
-    *COMPANY_GROUPS['FAANG'],
-    *COMPANY_GROUPS['MANGO'],
-    *COMPANY_GROUPS['Social Media'],
-    *COMPANY_GROUPS['Gig Economy'],
-    *COMPANY_GROUPS['Finance [Payments]'],
-    *COMPANY_GROUPS['AI [Infrastructure]'],
-    *COMPANY_GROUPS['AI [Autonomous Vehicles]'],
+COMPANY_GROUPS["Market Leaders"] = [
+    *COMPANY_GROUPS["FAANG"],
+    *COMPANY_GROUPS["MANGO"],
+    *COMPANY_GROUPS["Social Media"],
+    *COMPANY_GROUPS["Gig Economy"],
+    *COMPANY_GROUPS["Finance [Payments]"],
+    *COMPANY_GROUPS["AI [Infrastructure]"],
+    *COMPANY_GROUPS["AI [Autonomous Vehicles]"],
 ]
 
 COMPANIES = set(sum(COMPANY_GROUPS.values(), []))
