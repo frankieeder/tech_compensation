@@ -16,3 +16,6 @@ install:
 	. $(VENV_DIR)/bin/activate && pip install -r requirements.txt
 
 reinstall: delete-env create-env install
+
+cleanup:
+	black .
