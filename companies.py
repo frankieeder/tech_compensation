@@ -1,0 +1,311 @@
+import functools
+import operator
+
+from pandas.core.frame import com
+
+COMPANY_GROUPS = {}
+COMPANY_GROUPS["Top Paying 2024 [All Levels]"] = [
+    "OpenAI",
+    "Clubhouse",
+    "Anthropic",
+    "Chai Research",
+    "Snap",
+    "Coupang",
+    "Vatic Investments",
+    "TGS Management",
+    "Figma",
+    "Netflix",
+    "Perplexity AI",
+    "Hudson River Trading",
+    "Pinterest",
+    "Airbnb",
+    "Databricks",
+    "Citadel",
+    "Faire",
+    "Plaid",
+    "Robinhood",
+    "Old Mission",
+    "Stack AV",
+    "The Voleon Group",
+    "Character.ai",
+    "Calico Life Sciences",
+    "Jump Trading",
+    "PDT Partners",
+    # "PageBites",
+    "Roku",
+    "Thumbtack",
+    "Facebook",
+    "Woven Planet Group",
+    "Dropbox",
+    "Radix Trading",
+    "Cruise",
+    "Five Rings",
+    "Roblox",
+    "Optiver",
+    "Bridgewater Associates",
+    "Aquatic",
+    "Figure AI",
+    "Amplitude",
+    "Reddit",
+    "Jane Street",
+    "The Block",
+    "Snowflake",
+    "StubHub",
+    "Pure Storage",
+    "AngelList",
+    "insitro",
+    # "Cruise Automation",
+]
+COMPANY_GROUPS["Top Paying 2024 [I - Entry Level]"] = [
+    "Jane Street",
+    "Hudson River Trading",
+    "The D. E. Shaw Group",
+    "Optiver",
+    "IMC",
+    "Ramp",
+    "Bridgewater Associates",
+    "StubHub",
+    "Two Sigma",
+    "Anduril Industries",
+    "OpenAI",
+    "Waymo",
+    "Databricks",
+    "Snowflake",
+    "Figma",
+    "Affirm",
+    "Netflix",
+    "Roblox",
+    "Applied Intuition",
+    "Rippling",
+]
+COMPANY_GROUPS["Top Paying 2024 [II - Software Engineer]"] = [
+    "Anthropic",
+    "Hudson River Trading",
+    "Optiver",
+    "Databricks",
+    "Snap",
+    "Roblox",
+    "Snowflake",
+    "StubHub",
+    "IMC",
+    "Netflix",
+    "10x Genomics",
+    "Confluent",
+    "Jane Street",
+    "Waymo",
+    "Millennium",
+    "Facebook",
+    "Figma",
+    "Broadcom",
+    "Braze",
+    "Twitch",
+]
+COMPANY_GROUPS["Top Paying 2024 [III - Senior Software Engineer]"] = [
+    "The Trade Desk",
+    "SoFi",
+    "Roblox",
+    "Snap",
+    "Coupang",
+    "Broadcom",
+    "OpenAI",
+    "Figma",
+    "Databricks",
+    "Snowflake",
+    "StubHub",
+    "Uber",
+    "Netflix",
+    "DocuSign",
+    "LinkedIn",
+    "Two Sigma",
+    "Rippling",
+    "Instacart",
+    "ByteDance",
+    "Stripe",
+]
+COMPANY_GROUPS["Top Paying 2024 [IV - Staff Software Engineer]"] = [
+    "Oracle",
+    "OpenAI",
+    "Waymo",
+    "ByteDance",
+    "Coupang",
+    "Roblox",
+    "Facebook",
+    "Databricks",
+    "Rippling",
+    "Netflix",
+    "Stripe",
+    "Snowflake",
+    "Pinterest",
+    "LinkedIn",
+    "Uber",
+    "Hudson River Trading",
+    "Snap",
+    "Dropbox",
+    "Airtable",
+    "Amazon",
+]
+COMPANY_GROUPS["Top Paying 2024 [V - Principal Software Engineer]"] = [
+    "Facebook",
+    "Google",
+    "Salesforce",
+    "Amazon",
+    "Microsoft",
+    "Apple",
+    "Cisco",
+    "Twilio",
+    "Comcast",
+    "AMD",
+    "Workday",
+    "PayPal",
+    "Walmart",
+    "Capital One",
+    "Zscaler",
+    "Disney",
+    "Samsung",
+    "F5 Networks",
+    "Dell Technologies",
+    "Mastercard",
+    "Bosch Global",
+]
+
+COMPANY_GROUPS['FAANG'] = [
+    "Facebook",
+    "Apple",
+    "Amazon",
+    "Netflix",
+    "Google",
+]
+COMPANY_GROUPS['MANGO'] = [
+    "Facebook",
+    "Anthropic",
+    "Nvidia",
+    "Google",
+    "OpenAI",
+]
+
+COMPANY_GROUPS['Social Media'] = [
+    "Facebook",
+    "Twitter",
+    "ByteDance",
+
+    "Snap",
+    "Pinterest",
+    "LinkedIn",
+    "Reddit",
+    "Clubhouse",
+
+    "Netflix",
+
+    "Roblox",
+    "Twitch",
+]
+
+COMPANY_GROUPS['Gig Economy'] = [
+    "Uber",
+    "Lyft",
+    "Instacart",
+    "Airbnb",
+    "Thumbtack",
+    "AngelList",
+    "Coupang",
+    "StubHub",
+]
+COMPANY_GROUPS['Finance [Investment Firms]'] = [
+    "Vatic Investments",
+    "TGS Management",
+    "Hudson River Trading",
+    "Citadel",
+    "Faire",
+    "Old Mission",
+    "The Voleon Group",
+    "Jump Trading",
+    "PDT Partners",
+    "Woven Planet Group",
+    "Radix Trading",
+    "Five Rings",
+    "Optiver",
+    "Bridgewater Associates",
+    "Aquatic",
+    "Jane Street",
+    "insitro",
+    # "Cruise Automation",
+]
+COMPANY_GROUPS['Finance [Crypto]'] = [
+    "The Block",
+    "Coinbase",
+]
+COMPANY_GROUPS['Finance [Payments]'] = [
+    "Stripe",
+    "Block",
+    "Plaid",
+]
+COMPANY_GROUPS['Finance [FinTech]'] = [
+    *COMPANY_GROUPS['Finance [Payments]'],
+    "Rippling",
+    "Robinhood",
+]
+COMPANY_GROUPS['Finance'] = [
+    *COMPANY_GROUPS['Finance [FinTech]'],
+    *COMPANY_GROUPS['Finance [Crypto]'],
+    *COMPANY_GROUPS['Finance [Investment Firms]'],
+]
+COMPANY_GROUPS['Market Control'] = [
+    *COMPANY_GROUPS['Finance'],
+    *COMPANY_GROUPS['Gig Economy'],
+]
+
+COMPANY_GROUPS['Hardware'] = [
+    "Pure Storage",
+    "Nvidia",
+    "AMD",
+    "Intel",
+    # "ARM",
+    "Qualcomm",
+    "Broadcom",
+    # "Marvell",
+]
+COMPANY_GROUPS['Enterprise'] = [
+    "Dropbox",
+    "Databricks",
+    "Snowflake",
+    "Atlassian",
+    "Box",
+    "Docusign",
+    "Amplitude",
+]
+
+COMPANY_GROUPS['AI [Autonomous Vehicles]'] = [
+    "Cruise",
+    "Waymo",
+    "Stack AV",
+]
+COMPANY_GROUPS['AI [Infrastructure]'] = [
+    "Databricks",
+    "Snowflake",
+    "Nvidia",
+]
+COMPANY_GROUPS['AI [Products]'] = [
+    "OpenAI",
+    "Anthropic",
+    "Perplexity AI",
+    "Figma",
+    "Chai Research",
+    "Character.ai",
+    "Figure AI",
+]
+COMPANY_GROUPS['AI'] = [
+    *COMPANY_GROUPS['AI [Autonomous Vehicles]'],
+    *COMPANY_GROUPS['AI [Infrastructure]'],
+    *COMPANY_GROUPS['AI [Products]'],
+]
+COMPANY_GROUPS['Market Leaders'] = [
+    *COMPANY_GROUPS['FAANG'],
+    *COMPANY_GROUPS['MANGO'],
+    *COMPANY_GROUPS['Social Media'],
+    *COMPANY_GROUPS['Gig Economy'],
+    *COMPANY_GROUPS['Finance [Payments]'],
+    *COMPANY_GROUPS['AI [Infrastructure]'],
+    *COMPANY_GROUPS['AI [Autonomous Vehicles]'],
+]
+
+COMPANIES = set(sum(COMPANY_GROUPS.values(), []))

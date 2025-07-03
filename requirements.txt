@@ -1,0 +1,8 @@
+pandas
+selenium>=4.10.0
+undetected-chromedriver>=3.5.0
+lxml
+beautifulsoup4
+setuptools
+plotly
+streamlit
